@@ -50,7 +50,8 @@
 
 		app.use('/api/users', userRouter); 					: User Router 
 
-		app.use( (err: Error, req: Request, res: Response, next: NextFunction ) => { 		: Express Error Handler
+		// : Express Error Handler
+		app.use( (err: Error, req: Request, res: Response, next: NextFunction ) => {
 			res.status(500).json({
 				status: 'error', 
 				message: err.message
@@ -76,6 +77,9 @@
 		}); 
 
 		export default router; 
+
+
+
 
 
 ## Allowing Types (in Node)
@@ -112,11 +116,11 @@
 
 	const getAllUsers: RequestHandler = (req, res, next) => {	
 
-	M-1:	const id = req.params.id as string; 								: By Type Casting	.
-	M-2:	const id = (req.params as { id: string} ).id 				: Defining Specificly
-				const { id } = req.params as { id: string }; 				: 	. Easy way 
+	M-1:	const id = req.params.id as string; 
+	M-2:	const id = (req.params as { id: string} ).id 
+				const { id } = req.params as { id: string };
 	};
 
 	const getAllUsers: RequestHandler<{id: string}> = (req, res, next) => {
-	M-3:	const id = req.params.id 														: Probebly for params only
+	M-3:	const id = req.params.id 	: Probebly for params only
 	}; 
