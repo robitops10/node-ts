@@ -1,0 +1,20 @@
+{
+  "name": "Node-TS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start" : "node .",
+    "dev" : "nodemon --exec ts-node ./src/index.ts",
+    "build" : "tsc" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11"
+  }
+}
